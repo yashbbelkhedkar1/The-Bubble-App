@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#column1,#column2,#column3,#column4 {
+  float: left;
+  width: 70px;
+  padding: 5px;
+  margin :5px;
+  height: 100px;
+}
+
+#column5,#column6,#column7,#column8 {
+  float: right;
+  width: 10%;
+  padding-top:35px;
+  margin :5px;
+  height: 100px; 
+}
+
+.columnbutton{
+  float: right;
+  width: 10%;
+  margin-top :20px;
+  height: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#mainDiv{
+border-style: solid;
+  border-color: black;
+}
+</style>
+</head>
+<body>
+ <div style="text-align: center;"> 
+ <h2>Bubbles App</h2>
+ </div>
+
+<div id="mainDiv">
+<div class="row">
+  <div id="column1">
+
+    <svg>
+  	<circle cx="50" cy="50" r="25" stroke="black" stroke-width="2" fill="yellow" />
+	</svg> 
+ 
+  </div>
+  <div id="column5"  onclick="myFunction('column1','column5')">
+        <svg >
+  <polyline points="0 20,50 20,50 20,1 20,1 20,10 10,10 10,1 20,1 20,10 30,10  30,1 20" style="fill:white;stroke:black;" />
+</svg>
+  </div>
+</div>
+<div class="row">
+  <div id="column2">
+     <svg>
+  	<circle cx="50" cy="50" r="25"  stroke="black" stroke-width="2" fill="green" />
+	</svg> 
+  </div>
+  <div id="column6" onclick="myFunction('column2','column6')">
+
+    <svg >
+  <polyline points="0 20,50 20,50 20,1 20,1 20,10 10,10 10,1 20,1 20,10 30,10  30,1 20" style="fill:white;stroke:black;" />
+</svg>
+  </div>
+</div>
+<div class="row">
+  <div id="column3">
+     <svg>
+  	<circle cx="50" cy="50" r="25" fill="red"  stroke="black" stroke-width="2" />
+	</svg> 
+  </div>
+  <div id="column7" onclick="myFunction('column3','column7')">
+       <svg >
+  <polyline points="0 20,50 20,50 20,1 20,1 20,10 10,10 10,1 20,1 20,10 30,10  30,1 20" style="fill:white;stroke:black;" />
+</svg>
+  </div>
+</div>
+<div class="row">
+  <div id="column4">
+     <svg>
+  	<circle cx="50" cy="50" r="25"  stroke="black" stroke-width="2" fill="blue" />
+	</svg> 
+  </div>
+  <div id="column8" onclick="myFunction('column4','column8')">
+       <svg >
+  <polyline points="0 20,50 20,50 20,1 20,1 20,10 10,10 10,1 20,1 20,10 30,10  30,1 20" style="fill:white;stroke:black;" />
+</svg>
+  </div>
+</div>
+
+</div>
+</div>
+<div class="row">
+  <div class="columnbutton" onclick="window.location.reload();">
+  <button> Reset</button>
+</div>
+
+<script type="application/javascript">
+  function myFunction(circle,arrow) {
+    document.getElementById(arrow).style.cssFloat = "left";
+    document.getElementById(circle).querySelectorAll("circle")[0].style.fill = "grey";
+  }
+
+  </script>
+</body>
+</html>
